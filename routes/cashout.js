@@ -4,7 +4,7 @@ import axios from "axios";
 const cashout = express.Router();
 
 cashout.get("/conversion-rate", (req, res) => {
-    axios.get('http://dev-api.kumuapi.com/order/conversion-rate', 
+    axios.get(process.env.KUMU_API_LINK+'/order/conversion-rate', 
         { headers: 
             {
                 'x-kumu-token': req.headers['x-kumu-token'],
@@ -23,7 +23,7 @@ cashout.get("/conversion-rate", (req, res) => {
 })
 
 cashout.post("/cashouttype", (req, res) => {
-    axios.get('http://dev-api.kumuapi.com/order/cashouttype', 
+    axios.get(process.env.KUMU_API_LINK+'/order/cashouttype', 
         { headers: 
             {
                 'x-kumu-token': req.headers['x-kumu-token'],
